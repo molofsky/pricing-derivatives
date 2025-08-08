@@ -20,8 +20,8 @@
 
 using namespace std;
 
-bool exercise_option(int S_1, int K) {
-    return std::max(S_1 - K, 0) > 0; // (S_1 - K)^+
+int exercise_option(int S_1, int K) {
+    return std::max(S_1 - K, 0); // (S_1 - K)^+
 }
 
 vector<int> one_period_binomial(int S_0, int u, int d) {
