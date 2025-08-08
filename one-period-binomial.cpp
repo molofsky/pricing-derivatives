@@ -7,9 +7,15 @@
 *
 *
 * with d < 1 + r < u, i.e. no arbitrage exists between the stock and money market
+* 
+* Assumes (1) stock shares can be subdivided, (2) interest rate for investing is the same as the interest rate for
+* borrowing, (3) zero bid-ask spread, and (4) at any time, a stock only takes two states in the next period
+* 
 *
-* An example input for a European option with a fair strike price: 
-* S(0) = 4, X_0 = 1.20, u = 2, d = 0.5, r = 0.25, K = 5
+* An example input for a European call option with a fair strike price: 
+* S_0 = 4, X_0 = 1.20, u = 2, d = 0.5, r = 0.25, K = 5
+*
+*
 *
 * @author Adrian Molofsky
 * @version August 8, 2025
@@ -57,7 +63,7 @@ int main() {
     cout << "Interest rate: ";
     cin >> r;
     if (!(d < 1 + r && 1 + r < u)) {
-        cerr << "Error: assume no arbitrage between stock and money market, i.e. d < 1 + r < u" << endl;
+        cerr << "Error: no arbitrage exists between the stock and money market" << endl;
     }
 
     cout << "Strike price: ";
